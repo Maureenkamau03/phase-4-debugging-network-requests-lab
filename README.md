@@ -63,11 +63,17 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+    error:  
+    NameError (uninitialized constant ToysController::Toys
+
+        toy = Toys.create(toy_params)
+              ^^^^):
+        solution: To add a new instance you should use the class name which is singular therefore is was supposed to be: toy = Toy.create(toy_params)
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: Data should be rendered in a json formart there I added render json: toy
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: A destroy route needed to be added to the routes since the server logs indicated that no such route existed.
